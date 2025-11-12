@@ -26,10 +26,10 @@ class AttackCountingFunction:
         if show_all:
             print('Counts', self.all_counts)
             print('Success', self.success_list)
-        counts = np.array(self.success_counts)  # success_counts 改 all_counts
+        counts = np.array(self.success_counts)  
         if len(counts) == 0:
             counts = np.array([0])
-        return np.mean(counts)  #todo   只算成功的平均查询次数不公平，因为如果不成功的话这次的查询次数不会被计入，对能够查询到成功对抗样本的生成器不公平
+        return np.mean(counts)  
 
     def get_median(self):
         counts = np.array(self.success_list)
