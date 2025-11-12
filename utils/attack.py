@@ -7,7 +7,7 @@ def get_init_with_noise(model, X, y):
     p = model(X).argmax(1)
 
     while any(p == y):
-        noise_scale = 0.5  # todo 限制最大噪声强度
+        noise_scale = 0.5 
         init = torch.where(
             atleast_kdim(p == y, len(X.shape)), 
             (X + noise_scale*torch.randn_like(X)).clip(0, 1), 
