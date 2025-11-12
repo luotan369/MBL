@@ -13,7 +13,6 @@ This repository contains the official implementation of "Task-Aware Meta-Balance
 ### 1. Create Conda Virtual Environment
 
 Create a new conda environment with Python 3.9:
-
 ```bash
 conda env create -f environment.yml
 conda activate <your_env_name>
@@ -24,7 +23,6 @@ conda activate <your_env_name>
 ### 1. Train Target/Surrogate Models
 
 Navigate to the surrogate models directory and train your models:
-
 ```bash
 cd surro_models
 python target_trainer.py --model_name xxx
@@ -65,13 +63,11 @@ bash scripts/cifar10_metatrain.sh
 ### 4. Attack Evaluation
 
 Run the untargeted attack test:
-
 ```bash
 bash scripts/cifar10_attack_untargeted.sh
 ```
 
 ## Project Structure
-
 ```
 .
 ├── surro_models/           # Target and surrogate model training
@@ -87,10 +83,8 @@ bash scripts/cifar10_attack_untargeted.sh
 
 If you find this work useful in your research, please consider citing:
 
-
-  title:Task-Aware Meta-Balance-Learning for Better Generalizable Black-Box Adversarial Attack
+**Title**: Task-Aware Meta-Balance-Learning for Better Generalizable Black-Box Adversarial Attack
 
 ## Contact
 
-For questions or issues, please open an issue on GitHub or contact [luotan369@163.com].
-
+For questions or issues, please open an issue on GitHub or contact luotan369@163.com.
