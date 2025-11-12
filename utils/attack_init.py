@@ -33,7 +33,7 @@ def data_init(args):
         args.y_size = (1, 32, 32)
     else:
         raise NotImplementedError
-    dataloader = torch.utils.data.DataLoader(valid_set, batch_size=args.batch_size, shuffle=False, drop_last=False) # 加载验证集 batch_size=1
+    dataloader = torch.utils.data.DataLoader(valid_set, batch_size=args.batch_size, shuffle=False, drop_last=False) 
     return dataloader
 
 
@@ -95,13 +95,13 @@ def attacker_init(args):
 def buffer_init(args):
     mini_batch_size = args.finetune_mini_batch_size
     attack_method = args.attack_method
-    buffer_limit = args.buffer_limit   # buffer_limit 默认为1
+    buffer_limit = args.buffer_limit  
 
     image_buffer = ImageBuffer(batch_size=mini_batch_size)  # minibatch_size=20
-    clean_buffer = ImageBuffer(batch_size=mini_batch_size)  # 用工具类中的Image_Buffer类来创建，buffer
-    adv_buffer = AttackListBuffer(attack_method=attack_method, batch_size=mini_batch_size, uplimit=buffer_limit)  # 对抗样本Buffer大小20，uplimit=1
+    clean_buffer = ImageBuffer(batch_size=mini_batch_size) 
+    adv_buffer = AttackListBuffer(attack_method=attack_method, batch_size=mini_batch_size, uplimit=buffer_limit) 
     if not args.finetune_perturbation:
-        adv_buffer = None    # 如果不调整扰动的话不会设置对抗样本缓冲区
+        adv_buffer = None   
     return image_buffer, clean_buffer, adv_buffer
 
 
