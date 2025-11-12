@@ -3,7 +3,7 @@ import torch
 
 def eliminate_error(x):
     # Not Recommend
-    # 函数返回处理后的张量 x，其中所有的 NaN 和 Inf 值都被替换为了 0
+
     x = torch.where(torch.isnan(x), torch.zeros_like(x), x)
     x = torch.where(torch.isinf(x), torch.zeros_like(x), x)
     return x
